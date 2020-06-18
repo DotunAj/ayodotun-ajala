@@ -1,0 +1,39 @@
+.navigation{
+    padding: 2em;
+    height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $dark;
+    a{
+        color: #0f401f;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+    .hamburger{
+        width: 1.75em;
+        cursor: pointer;
+        z-index: 61;
+        &:after,&:before, div {
+            background-color: #0f401f;
+            border-radius: 3px;
+            content: "";
+            display: block;
+            height: 0.25em;
+            margin: 0.25em 0;
+            transition: all 0.6s ease-in-out;
+        }
+    }
+    .close{
+        background-color: #fff;
+        &:after{
+            transform: translateY(-0.5em) rotate(-135deg);
+        }
+        &:before{
+            transform: translateY(0.5em) rotate(135deg);
+        }
+        div{
+            transform: scale(0);
+        }
+    }
+}
