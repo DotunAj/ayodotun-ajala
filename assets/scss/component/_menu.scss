@@ -1,0 +1,106 @@
+.menu{
+    background-color: rgb(29, 27, 27);
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+    z-index: 50;
+    transform: translateX(100%);
+    display: flex;
+    color: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .header{
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 0.4em;
+        position: relative;
+        width: 60%;
+        top: 1px;
+        text-align: center;
+        .header-line{
+            display: block;
+            height: 2px;
+            background-color: #fff;
+            width: 100%;
+            position: absolute;
+            top: 9px;
+            z-index: -1;
+        }
+        .header-text {
+            padding: 0 10px;
+            font-size: 1em;
+            z-index: 1;
+            position: relative;
+            background-color: rgb(29, 27, 27);
+        }
+    }
+    .body{
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.9em;
+        padding: 0;
+        margin: 0;
+        font-weight: 700;
+        li a{
+            display: inline-block;
+            padding: 15px 20px;
+            transition: ease-in 0.25s;
+            color: #fff;
+            &:hover{
+                background-color: #fff;
+                color: rgb(31, 29, 29) !important;
+            }
+        }
+
+    }
+    .footer{
+        width: 50%;
+        margin-top: 20px;
+        .footer-links{
+            width: 100%;
+            display: flex;
+            list-style: none;
+            color: #fff;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            a{
+                background-repeat: no-repeat;
+                background-position: center;
+                &.twitter{
+                    background-image: url('~assets/svgs/twitter-white.svg');
+                }
+                &.linkedin{
+                    background-image: url('~assets/svgs/linkedin-white.svg');
+                }
+                &.github{
+                    background-image: url('~assets/svgs/github-white.svg');
+                }
+
+            }
+            li a{
+                display: inline-block;
+                height: 40px;
+                width: 40px;
+                transition: ease-in 0.25s;
+                color: #fff;
+            }
+        }
+        .footer-line{
+            display: block;
+            height: 2px;
+            background-color: #ffffff49;
+        }
+    }
+}
+
+.open_menu {
+    transform: translateX(0);
+}

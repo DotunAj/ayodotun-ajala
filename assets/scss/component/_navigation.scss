@@ -25,14 +25,16 @@
         }
     }
     .close{
-        background-color: #fff;
         &:after{
+            background-color: #fff;
             transform: translateY(-0.5em) rotate(-135deg);
         }
         &:before{
+            background-color: #fff;
             transform: translateY(0.5em) rotate(135deg);
         }
         div{
+            background-color: #fff;
             transform: scale(0);
         }
     }
