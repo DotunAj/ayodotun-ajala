@@ -1,0 +1,47 @@
+.home {
+  height: calc(80vh - 4em);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-weight: bold;
+  background-image: url('~assets/svgs/rectangle.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  @media (max-width: 1024px) {
+    height: 65vh;
+    padding: 1.5em;
+    background-size: 620px 620px;
+  }
+
+  @media (max-width: 800px) {
+    height: 60vh;
+    background-size: 350px 350px;
+  }
+
+  h1 {
+    font-size: 2.8em;
+    line-height: 1.5em;
+    color: #0f401f;
+    margin: 0;
+    @media (max-width: 1024px) {
+      font-size: 3em;
+    }
+    @media (max-width: 800px) {
+      font-size: 1.7em;
+    }
+  }
+
+  p {
+    font-size: 1.2em;
+    color: #62666a;
+    text-align: right;
+    margin: 0 auto;
+    padding-left: 4em;
+    align-self: flex-end;
+    @media (max-width: 800px) {
+      font-size: 1em;
+    }
+  }
+}

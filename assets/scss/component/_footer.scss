@@ -1,0 +1,45 @@
+.footer {
+  width: calc(100% - 4em);
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 2em 2em 0 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  p {
+    font-size: 0.9em;
+    font-weight: 700;
+    opacity: 0.7;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+
+  .footer-links {
+    a {
+      display: block;
+      width: 0.9em;
+      height: 0.9em;
+      background: no-repeat center center;
+      background-size: 100% auto;
+      opacity: 0.7;
+      &.twitter {
+        background-image: url('~assets/svgs/twitter.svg');
+      }
+      &.linkedin {
+        background-image: url('~assets/svgs/linkedin.svg');
+      }
+      &.github {
+        background-image: url('~assets/svgs/github.svg');
+      }
+    }
+  }
+}

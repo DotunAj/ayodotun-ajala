@@ -1,5 +1,10 @@
 <template>
-  <div class="container">
-    <h1>Hello D</h1>
-  </div>
+  <section class="home container">
+    <div>
+      <h1>
+        I'm Ayodotun, a
+        <br />Front End web <br />developer.
+      </h1>
+    </div>
+  </section>
 </template>
