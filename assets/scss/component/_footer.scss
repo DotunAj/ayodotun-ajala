@@ -1,12 +1,14 @@
 .footer {
   width: calc(100% - 4em);
-  position: fixed;
+  position: absolute;
   bottom: 0;
-  right: 0;
   padding: 2em 2em 0 2em;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 800px) {
+    position: relative;
+  }
 
   p {
     font-size: 0.9em;

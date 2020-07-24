@@ -6,16 +6,18 @@
     </div>
     <ul class="body">
       <li>
-        <a href="#">Home</a>
+        <nuxt-link :class="{ active: isHomeActive }" to="/">Home</nuxt-link>
       </li>
       <li>
-        <a href="#">About</a>
+        <nuxt-link :class="{ active: isAboutActive }" to="/about"
+          >About</nuxt-link
+        >
       </li>
       <li>
-        <a href="#">Portfolio</a>
+        <nuxt-link to="/">Portfolio</nuxt-link>
       </li>
       <li>
-        <a href="#">Contact me</a>
+        <nuxt-link to="/">Contact me</nuxt-link>
       </li>
     </ul>
     <div class="menu-footer">
@@ -40,7 +42,9 @@
 export default {
   data() {
     return {
-      menuOpened: false
+      menuOpened: false,
+      isHomeActive: false,
+      isAboutActive: false
     }
   },
   created() {
