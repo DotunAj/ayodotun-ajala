@@ -1,6 +1,6 @@
 <template>
   <div class="navigation">
-    <a href="#">Ayodotun A. Ajala</a>
+    <a href="/">Ayodotun A. Ajala</a>
     <div class="hamburger" :class="{ close: showClose }" @click="openMenu">
       <div></div>
     </div>
@@ -14,13 +14,17 @@ export default {
       showClose: false
     }
   },
+  created() {
+    this.$nuxt.$on('toggleMenu', () => {
+      this.toggleClose()
+    })
+  },
   methods: {
     toggleClose() {
       this.showClose = !this.showClose
     },
     openMenu() {
       this.$nuxt.$emit('toggleMenu')
-      this.toggleClose()
     }
   }
 }

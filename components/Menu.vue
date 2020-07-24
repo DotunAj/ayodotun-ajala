@@ -6,11 +6,11 @@
     </div>
     <ul class="body">
       <li>
-        <nuxt-link :class="{ active: isHomeActive }" to="/">Home</nuxt-link>
+        <a :class="{ active: isHomeActive }" @click="removeMenu('/')">Home</a>
       </li>
       <li>
-        <nuxt-link :class="{ active: isAboutActive }" to="/about"
-          >About</nuxt-link
+        <a :class="{ active: isAboutActive }" @click="removeMenu('/about')"
+          >About</a
         >
       </li>
       <li>
@@ -50,7 +50,23 @@ export default {
   created() {
     this.$nuxt.$on('toggleMenu', () => {
       this.menuOpened = !this.menuOpened
+      this.setActiveMenu()
     })
+  },
+  methods: {
+    removeMenu(path) {
+      this.$router.push(path)
+      this.$nuxt.$emit('toggleMenu')
+    },
+    setActiveMenu() {
+      if (this.$route.name === 'index') {
+        this.isHomeActive = true
+        this.isAboutActive = false
+      } else if (this.$route.name === 'about') {
+        this.isAboutActive = true
+        this.isHomeActive = false
+      }
+    }
   }
 }
 </script>
