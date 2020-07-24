@@ -36,6 +36,21 @@
           padding: 1em;
         }
       }
+      .arrow-link {
+        font-size: 16px;
+        font-weight: 400;
+        padding: 1em 0;
+        align-self: flex-end;
+        img {
+          margin-right: 0.8em;
+          transition: all ease-in 0.2s;
+        }
+        &:hover {
+          img {
+            margin-right: 0.3em;
+          }
+        }
+      }
     }
   }
 }

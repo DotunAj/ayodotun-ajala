@@ -17,6 +17,12 @@
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </div>
+        <div class="arrow-link">
+          <nuxt-link to="/">
+            <img src="@/assets/svgs/arrow.svg" svg-inline />
+            Portfolio
+          </nuxt-link>
+        </div>
       </div>
     </div>
   </div>
