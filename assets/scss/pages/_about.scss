@@ -1,55 +1,39 @@
 .about {
   color: #fff;
-  .container {
-    background-color: rgba($color: #000000, $alpha: 0.7);
-    width: 80%;
-    margin: 10px auto;
-    text-align: center;
-    @media (max-width: 800px) {
+  h1 {
+    margin: 0;
+  }
+  .image {
+    margin-top: 2em;
+    width: 200px;
+    img {
       width: 100%;
     }
-    .content {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-      padding: 3em;
-      h1 {
-        margin: 0;
-      }
-      .image {
-        margin-top: 2em;
-        width: 200px;
-        img {
-          width: 100%;
-        }
-      }
+  }
 
-      .paragraph {
-        width: 470px;
-        margin-top: 2em;
-        text-align: justify;
-        font-size: 18px;
-        font-weight: 500;
-        @media (max-width: 800px) {
-          width: 291px;
-          padding: 1em;
-        }
-      }
-      .arrow-link {
-        font-size: 16px;
-        font-weight: 400;
-        padding: 1em 0;
-        align-self: flex-end;
-        img {
-          margin-right: 0.8em;
-          transition: all ease-in 0.2s;
-        }
-        &:hover {
-          img {
-            margin-right: 0.3em;
-          }
-        }
+  .paragraph {
+    width: 470px;
+    margin-top: 2em;
+    text-align: justify;
+    font-size: 18px;
+    font-weight: 500;
+    @media (max-width: 800px) {
+      width: 291px;
+      padding: 1em;
+    }
+  }
+  .arrow-link {
+    font-size: 16px;
+    font-weight: 400;
+    padding: 1em 0;
+    align-self: flex-end;
+    img {
+      margin-right: 0.8em;
+      transition: all ease-in 0.2s;
+    }
+    &:hover {
+      img {
+        margin-right: 0.3em;
       }
     }
   }

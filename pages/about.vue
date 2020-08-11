@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <div class="container">
+    <div class="container-fluid">
       <div class="content">
         <h1>About Me</h1>
         <div class="image">
@@ -18,7 +18,7 @@
           </p>
         </div>
         <div class="arrow-link">
-          <nuxt-link to="/">
+          <nuxt-link to="/portfolio">
             <img src="@/assets/svgs/arrow.svg" svg-inline />
             Portfolio
           </nuxt-link>

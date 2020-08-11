@@ -1,0 +1,39 @@
+.portfolio {
+  color: #fff;
+  h1 {
+    margin: 0;
+  }
+  .arrow-link {
+    font-size: 16px;
+    font-weight: 400;
+    padding: 1em 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    div {
+      img {
+        margin-right: 0.8em;
+        transition: all ease-in 0.2s;
+      }
+      &:hover {
+        img {
+          margin-right: 0.3em;
+        }
+      }
+    }
+    .first {
+      a {
+        img {
+          margin-left: 0.8em;
+          transform: rotate(180deg);
+        }
+      }
+      &:hover {
+        img {
+          margin-left: 0.3em;
+          margin-right: 0.8em;
+        }
+      }
+    }
+  }
+}

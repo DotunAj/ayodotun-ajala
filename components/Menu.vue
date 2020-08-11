@@ -14,7 +14,11 @@
         >
       </li>
       <li>
-        <nuxt-link to="/">Portfolio</nuxt-link>
+        <a
+          :class="{ active: isPortfolioActive }"
+          @click="removeMenu('/portfolio')"
+          >Portfolio</a
+        >
       </li>
       <li>
         <nuxt-link to="/">Contact me</nuxt-link>
@@ -44,7 +48,8 @@ export default {
     return {
       menuOpened: false,
       isHomeActive: false,
-      isAboutActive: false
+      isAboutActive: false,
+      isPortfolioActive: false
     }
   },
   created() {
@@ -62,9 +67,15 @@ export default {
       if (this.$route.name === 'index') {
         this.isHomeActive = true
         this.isAboutActive = false
+        this.isPortfolioActive = false
       } else if (this.$route.name === 'about') {
         this.isAboutActive = true
         this.isHomeActive = false
+        this.isPortfolioActive = false
+      } else if (this.$route.name === 'portfolio') {
+        this.isAboutActive = false
+        this.isHomeActive = false
+        this.isPortfolioActive = true
       }
     }
   }

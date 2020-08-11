@@ -1,6 +1,6 @@
 html,
 body {
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: 'Montserrat Alternates', sans-serif;
   margin: 0;
 }
 
@@ -12,4 +12,22 @@ body {
 html a {
   text-decoration: none;
   color: #fff;
+}
+
+.container-fluid {
+  background-color: rgba($color: #000000, $alpha: 0.7);
+  width: 80%;
+  margin: 10px auto;
+  text-align: center;
+  @media (max-width: 800px) {
+    width: 100%;
+  }
+
+  .content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 3em;
+  }
 }
