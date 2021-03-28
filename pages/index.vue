@@ -1,23 +1,42 @@
 <template>
-  <div class="container ">
+  <div
+    style="width:100%;height:100vh;background-color: #00071c;"
+    class="container super"
+  >
     <canvas id="c"> </canvas>
 
     <div class="absolute z-10 w-full mx-auto ">
       <section
         class="flex px-6 md:px-32 pb-16 md:pt-32 flex-col justify-between  home"
       >
-        <div class="text-white flex flex-col justify-center h-full">
-          <p class="text-gray-600 md:text-lg pb-4">AYODOTUN AJALA</p>
-          <h1 class="font-bold text-2xl md:text-4xl">
-            Frontend Developer From Lagos, Nigeria
-          </h1>
-          <h1 class="font-bold text-2xl md:text-4xl">
-            Bsc. Computer Engineering
-          </h1>
-        </div>
-        <div class="self-start flex items-center">
-          <img class="h-10" src="@/assets/svgs/scroll.svg" alt="scroll" />
-          <p class="text-sm text-gray-400 text-white pl-3">scroll</p>
+        <transition name="write" type="out-in">
+          <div
+            v-if="loaded"
+            class="home__profile text-white flex flex-col justify-center h-full"
+          >
+            <p class="text-gray-600 md:text-lg pb-4">AYODOTUN AJALA</p>
+            <h1 class="font-bold text-2xl md:text-4xl">
+              Frontend Developer From Lagos, Nigeria
+            </h1>
+            <h1 class="font-bold text-2xl md:text-4xl">
+              Bsc. Computer Engineering
+            </h1>
+          </div>
+        </transition>
+
+        <transition name="scroll">
+          <div v-if="loaded" class="self-start flex items-center">
+            <img class="h-10" src="@/assets/svgs/scroll.svg" alt="scroll" />
+            <p class="text-sm text-gray-400 text-white pl-3">scroll</p>
+          </div>
+        </transition>
+      </section>
+
+      <section
+        class="flex px-6 md:px-32 pb-16 md:pt-32 flex-col justify-between  home"
+      >
+        <div data-aos="fade-up">
+          <h1>Hello Dev Community!</h1>
         </div>
       </section>
     </div>
@@ -69,9 +88,13 @@ export default {
     return {
       canvas: null,
       ctx: null,
-      stars: []
+      stars: [],
+      loaded: false
     }
   },
+  // created() {
+  //   AOS.init()
+  // },
   async mounted() {
     this.canvas = document.getElementById('c')
     this.ctx = this.canvas.getContext('2d')
@@ -83,6 +106,7 @@ export default {
 
     if (this.canvas && this.ctx) {
       await this.setupStars()
+      this.loaded = true
     }
   },
 
@@ -131,18 +155,67 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@keyframes write {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    width: 100%;
+  }
+}
+
 #c {
   position: absolute; /* absolute */
   top: 0;
   left: 0;
-  width: 100vw; /* 100% */
+  width: 100%; /* 100% */
   height: 100vh; /* 100% */
+}
+
+.write- {
+  &enter {
+    animation: write 4s;
+  }
+  &enter-active,
+  &leave-active {
+    animation: write 4s;
+  }
+}
+
+.scroll- {
+  &enter {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  &enter-active,
+  &leave-active {
+    transition: all 0.3s 1s ease-out;
+  }
+
+  &leave-to {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
 
 .home {
   height: 100vh;
 
-  @media screen {
+  &__profile {
+    /* animation-name: write;
+    animation-duration: 4s;
+    animation-delay: 2s; */
+    overflow: hidden;
+
+    p,
+    h1 {
+      width: calc(75vw);
+    }
   }
 }
 </style>
