@@ -7,13 +7,13 @@
           <div class="first">
             <nuxt-link to="/about">
               About Me
-              <img src="@/assets/svgs/arrow.svg" svg-inline />
+              <!-- <img src="@/assets/svgs/arrow.svg" svg-inline /> -->
             </nuxt-link>
           </div>
 
           <div>
             <nuxt-link to="/">
-              <img src="@/assets/svgs/arrow.svg" svg-inline />
+              <!-- <img src="@/assets/svgs/arrow.svg" svg-inline /> -->
               Contact Me
             </nuxt-link>
           </div>

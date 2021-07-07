@@ -19,7 +19,7 @@
         </div>
         <div class="arrow-link">
           <nuxt-link to="/portfolio">
-            <img src="@/assets/svgs/arrow.svg" svg-inline />
+            <!-- <img src="@/assets/svgs/arrow.svg" svg-inline /> -->
             Portfolio
           </nuxt-link>
         </div>

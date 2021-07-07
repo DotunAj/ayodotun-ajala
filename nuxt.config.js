@@ -1,10 +1,9 @@
 export default {
-  mode: 'universal',
   /*
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Ayodotun Ajala',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -19,7 +18,7 @@ export default {
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css?family=Montserrat+Alternates:400,500,700&display=swap'
+          'https://fonts.googleapis.com/css2?family=Karla:wght@300;400;700&display=swap'
       }
     ]
   },
@@ -34,14 +33,17 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [{ src: '@/plugins/aos.js', mode: 'client' }],
   /*
    ** Nuxt.js dev-modules
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/tailwindcss'
   ],
+
+  components: true,
   /*
    ** Nuxt.js modules
    */
